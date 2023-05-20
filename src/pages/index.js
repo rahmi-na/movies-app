@@ -1,15 +1,24 @@
-import Layout from '@/components/Layout'
-import HomePage from '@/modules/Home'
+import HomePage from '@/modules/Home';
+import nookies from 'nookies';
 
 
-export const Home = () => {
-  return (
-    <>
-    <Layout>
-      <HomePage />
-    </Layout>
-    </>
-  )
-}
+export const getServerSideProps = async(ctx) => {
+  const cookies = nookies.get(ctx);
 
-export default Home;
+  if (!cookies.accessToken){
+    return {
+      props: {
+        auth: false,
+      },
+    };
+  }
+
+    return {
+      props: {
+        auth: true,
+        // role: cookies.role
+      },
+    };
+  };
+
+export default HomePage;
