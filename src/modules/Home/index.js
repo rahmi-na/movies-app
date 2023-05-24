@@ -3,7 +3,7 @@ import { setPopular } from "@/store/popular";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Banner from "./detail/banner";
-import UpComing from "./detail/upcoming";
+import Popular from "./detail/popular";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -33,7 +33,8 @@ function HomePage() {
             );
           })
         : "Not data files"}
-      <UpComing />
+      Caraousell:: Popular
+      <Popular popular={popular} baseURL={baseURL} />
     </div>
   );
 }
