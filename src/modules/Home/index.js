@@ -7,7 +7,6 @@ import { getTrending } from "@/lib/trending/fetchApi";
 import { setTrending } from "@/store/trending";
 import Banner from "./detail/banner";
 import Popular from "./detail/popular";
-import { data } from "autoprefixer";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -27,30 +26,9 @@ function HomePage() {
   return (
     <div>
       {/* Banner */}
-      {popular?.length
-        ? popular.slice(3, 4).map((item, idx) => {
-            const Image = baseURL + item?.backdrop_path;
-            console.log(Image);
-            return (
-              <div key={idx}>
-                <Banner
-                  title={item?.original_title}
-                  image={Image}
-                  overview={item?.overview}
-                />
-              </div>
-            );
-          })
-        : "Not data files"}
-
-      {/* <Banner baseURL={baseURL} data={popular} /> */}
-
+      <Banner data={popular} baseURL={baseURL} />
       {/* Carousel: Popular */}
-      {/* {popular && popular.length ? (
-        <Popular data={popular} baseURL={baseURL} />
-      ) : (
-        <div>Popular data not available</div>
-      )} */}
+      <Popular data={popular} baseURL={baseURL} />
     </div>
   );
 }

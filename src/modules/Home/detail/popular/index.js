@@ -2,7 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 
-function Popular({ data, baseUrl }) {
+function Popular({ data, baseURL }) {
+  console.log(data);
   const settings = {
     dots: true,
     infinite: true,
@@ -17,26 +18,25 @@ function Popular({ data, baseUrl }) {
         className="text-white text-3xl pb-4 px-2 font-semibold"
         style={{ fontSize: "1.4vw" }}
       >
-        Populer di Netlix
+        Populer di Netflix
       </h1>
       <div className="w-full flex items-center justify-center text-white">
         <div className="max-w-full">
           <Slider {...settings}>
-            {data?.map((item, idx) => {
-              const Image = baseUrl + item?.backdrop_path;
-              return (
-                <div key={idx} className="px-1">
-                  <div className="bg-slate-500 rounded">
-                    <Image
-                      src={Image}
-                      className="rounded"
-                      alt=""
-                      width={1000}
-                    />
+            {data?.length ? (
+              data?.map((item, idx) => {
+                const Image = baseURL + item?.backdrop_path;
+                return (
+                  <div key={idx} className="px-1">
+                    <div className="bg-slate-500 rounded">
+                      <img src={Image} className="rounded" alt="" />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div>Popular data not available</div>
+            )}
           </Slider>
         </div>
       </div>
