@@ -8,7 +8,7 @@ function Banner({ data, baseURL }) {
   return (
     <div>
       {data?.length
-        ? data?.slice(18, 19).map((item, idx) => {
+        ? data?.slice(10, 11).map((item, idx) => {
             const images = baseURL + item?.backdrop_path;
 
             return (
@@ -24,15 +24,14 @@ function Banner({ data, baseURL }) {
                   </div>
                   <div className="px-4 md:px-16 max-w-full">
                     <div className="text-white">
-                      <span className=" uppercase text-3xl font-bold inline-flex items-center">
+                      <span className=" uppercase text-3lg font-bold inline-flex items-center">
                         <Image
                           src={netflixSymbol}
-                          alt="Netflix Symbol"
-                          width={50}
+                          alt="NetflixSymbol"
+                          width={25}
                         />
                         <h1 className=" tracking-widest opacity-70">Serial </h1>
                       </span>
-
                       <h1 className="grid grid-cols-2 lg:text-7xl xl:text-5xl 2xl:text-7xl font-extrabold pb-5 uppercase">
                         {item?.original_title}
                       </h1>

@@ -29,6 +29,7 @@ function HomePage() {
       <Banner data={popular} baseURL={baseURL} />
       {/* Carousel: Popular */}
       <Popular data={popular} baseURL={baseURL} />
+      <Popular data={trending} baseURL={baseURL} />
     </div>
   );
 }
