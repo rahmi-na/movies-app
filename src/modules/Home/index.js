@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { getPopular } from "@/lib/popular/fetchApi";
 import { setPopular } from "@/store/popular";
 import { getTrending } from "@/lib/trending/fetchApi";
 import { setTrending } from "@/store/trending";
 import Banner from "./detail/banner";
-import Popular from "./detail/popular";
+import Row from "./components/row";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -27,9 +26,10 @@ function HomePage() {
     <div>
       {/* Banner */}
       <Banner data={popular} baseURL={baseURL} />
-      {/* Carousel: Popular */}
-      <Popular data={popular} baseURL={baseURL} />
-      <Popular data={trending} baseURL={baseURL} />
+
+      {/* Carousel: Popular, trending */}
+      <Row title="Populer di Netflix" data={popular} baseURL={baseURL} />
+      <Row title="Sedang Tren Sekarang" data={trending} baseURL={baseURL} />
     </div>
   );
 }
