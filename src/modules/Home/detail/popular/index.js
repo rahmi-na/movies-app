@@ -13,7 +13,7 @@ function Popular({ data, baseURL }) {
     autoplay: false,
   };
   return (
-    <div className="relative px-4 md:px-4 z-50 py-3">
+    <div className="relative px-7 md:px-7 z-40 py-3">
       <h1
         className="text-white text-3xl pb-4 px-2 font-semibold"
         style={{ fontSize: "1.4vw" }}
