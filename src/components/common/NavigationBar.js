@@ -1,11 +1,11 @@
 import Image from "next/image";
-import logo from "@/../../movies-app-project/public/assets/logo.png";
+import logo from "@/../../public/assets/logo.png";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Link from "next/link";
-import { accounts, icon, menu } from "@/utils/navbar";
+import { menu, icon, accounts } from "@/utils/navbar";
 
 function NavigationBar() {
   const [open, setOpen] = useState(false);
@@ -42,7 +42,7 @@ function NavigationBar() {
   return (
     <nav
       className={`fixed w-full duration-500 ease-in-out z-50 ${
-        scroll ? "bg-dark text-white" : "text-white"
+        scroll ? "bg-navbar text-white" : "text-white"
       }`}
     >
       {!scroll && (
@@ -118,7 +118,7 @@ function NavigationBar() {
                       id="dropDownHover"
                       onMouseEnter={handleMouseEnter}
                       onMouseDown={handleMouseLeave}
-                      className="z-10 bg-dark divide-y divide-gray-900 rounded-lg shadow w-44 dark:bg-gray-700"
+                      className="z-10 bg-navbar divide-y divide-gray-900 rounded-lg shadow w-44 dark:bg-gray-700"
                     >
                       {open && (
                         <ul

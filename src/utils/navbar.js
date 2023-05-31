@@ -1,6 +1,6 @@
 import { IoIosSearch, IoMdNotificationsOutline } from "react-icons/io";
 
-const menu = [
+export const menu = [
   {
     name: "Beranda",
     href: "#",
@@ -27,7 +27,7 @@ const menu = [
   },
 ];
 
-const icon = [
+export const icon = [
   {
     icons: IoIosSearch,
   },
@@ -36,7 +36,7 @@ const icon = [
   },
 ];
 
-const accounts = [
+export const accounts = [
   {
     name: "Akun",
     href: "#",
