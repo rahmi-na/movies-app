@@ -54,30 +54,27 @@ function NavigationBar() {
             <a href="https://flowbite.com/" className="flex items-center mr-10">
               <Image src={logo} alt="FlowbiteLogo" width={100} />
             </a>
+
             <div className={`w-full md:block md:w-auto hidden`}>
-              <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-50 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
-                {menu?.length ? (
-                  menu?.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className={
-                        router.pathname === item.href
-                          ? "active font-bold"
-                          : "font-normal"
-                      }
+              <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+                {menu?.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className={
+                      router.pathname === item.href
+                        ? "active font-bold"
+                        : "font-normal"
+                    }
+                  >
+                    <a
+                      href={item.href}
+                      className="block py-2 pl-3 pr-4 rounded md:p-0"
+                      aria-current="page"
                     >
-                      <a
-                        href={item.href}
-                        className="block py-2 pl-3 pr-4 rounded md:p-0"
-                        aria-current="page"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))
-                ) : (
-                  <div></div>
-                )}
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -97,7 +94,7 @@ function NavigationBar() {
               ))}
               <div
                 onMouseEnter={handleMouseEnter}
-                onMouseDown={handleMouseLeave}
+                onMouseLeave={handleMouseLeave}
               >
                 <button
                   onClick={handleOpen}
