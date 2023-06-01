@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 
 function Row({ data, baseURL, title }) {
   console.log(data);
+  const slider = React.createRef();
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 3,
+    slidesToScroll: 6,
     autoplay: false,
   };
   return (
@@ -22,13 +23,13 @@ function Row({ data, baseURL, title }) {
       </h1>
       <div className="w-full flex items-center justify-center text-white">
         <div className="max-w-full">
-          <Slider {...settings}>
+          <Slider ref={slider} {...settings}>
             {data?.length ? (
               data?.map((item, idx) => {
                 const Image = baseURL + item?.backdrop_path || item.poster_path;
                 return (
                   <div key={idx} className="px-1">
-                    <div className="bg-slate-500 rounded">
+                    <div className="rounded">
                       <img
                         src={Image}
                         className="rounded"
@@ -40,7 +41,7 @@ function Row({ data, baseURL, title }) {
                 );
               })
             ) : (
-              <div>Popular data not available</div>
+              <div>Data not available</div>
             )}
           </Slider>
         </div>

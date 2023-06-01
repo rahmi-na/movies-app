@@ -3,11 +3,11 @@ import { IoIosSearch, IoMdNotificationsOutline } from "react-icons/io";
 export const menu = [
   {
     name: "Beranda",
-    href: "#",
+    href: "/",
   },
   {
     name: "Acara TV",
-    href: "#",
+    href: "/televisi",
   },
   {
     name: "Film",
