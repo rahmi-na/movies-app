@@ -8,7 +8,10 @@ export const HORROR_MOVIES =
 export const NOW_PLAYING_MOVIES = BASE_URL + "/movie/now_playing";
 
 // TV
-export const TV_DISCOVER = BASE_URL + "/discover/tv";
+export const TV_DISCOVER = BASE_URL + "/discover/tv?with_original_language=en";
+export const ACTION_TV =
+  BASE_URL +
+  "/discover/tv?api_key=THE_KEY&sort_by=popularity.desc&page=1&with_original_language=en&with_genres=10759";
 
 // Account
 export const API_KEY = "5358b39964010814018850edbc55a689";
