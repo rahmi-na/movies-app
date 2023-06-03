@@ -3,12 +3,11 @@ export const BASE_URL = "https://api.themoviedb.org/3";
 // Movie
 export const POPULAR_MOVIES = BASE_URL + "/movie/popular";
 export const TRENDING_MOVIES = BASE_URL + "/trending/movie/week?api_key=";
-export const HORROR_MOVIES =
-  BASE_URL + "/discover/movie?api_key=XXXXX&with_genres=27";
+export const HORROR_MOVIES = BASE_URL + "/discover/movie?with_genres=27";
 export const NOW_PLAYING_MOVIES = BASE_URL + "/movie/now_playing";
 
 // TV
-export const TV_DISCOVER = BASE_URL + "/discover/tv?with_original_language=en";
+export const TV_DISCOVER = BASE_URL + "/discover/tv?page=2";
 export const ACTION_TV =
   BASE_URL +
   "/discover/tv?api_key=THE_KEY&sort_by=popularity.desc&page=1&with_original_language=en&with_genres=10759";
