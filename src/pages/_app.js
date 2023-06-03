@@ -1,5 +1,5 @@
 import FooterBar from "@/components/FooterBar";
-import NavigationBar from "@/components/common/NavigationBar";
+import NavigationBar from "@/components/NavigationBar";
 import { store } from "@/store";
 import "@/styles/globals.css";
 import { Provider } from "react-redux";

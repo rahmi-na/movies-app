@@ -9,7 +9,7 @@ import { setHorror } from "@/store/movie/horror";
 import { getNowPlaying } from "@/lib/playing/fetchApi";
 import { setNowPlaying } from "@/store/movie/playing";
 import Banner from "./detail/banner";
-import Row from "./components/row";
+import Row from "../../components/row";
 
 function HomePage() {
   const dispatch = useDispatch();

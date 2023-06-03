@@ -7,7 +7,7 @@ import { setNowPlaying } from "@/store/movie/playing";
 import { getActionTv } from "@/lib/action/fetchApi";
 import action, { setActionTv } from "@/store/televisi/action";
 import Banner from "./detail/banner";
-import Row from "../Home/components/row";
+import Row from "../../components/row";
 
 function TelevisiPage() {
   const dispatch = useDispatch();
