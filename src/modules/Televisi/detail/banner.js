@@ -33,7 +33,7 @@ function Banner({ data, baseURL }) {
                         <h1 className=" tracking-widest opacity-70">Serial </h1>
                       </span>
                       <h1 className="grid grid-cols-2 lg:text-7xl xl:text-5xl 2xl:text-7xl font-extrabold pb-5 uppercase">
-                        {item?.original_title}
+                        {item?.original_name}
                       </h1>
                       <p
                         className="grid grid-cols-2 text-xl "
