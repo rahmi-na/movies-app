@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDiscoverTv } from "@/lib/discover/fetchApi";
+import { getDiscoverTv } from "@/lib/televisi/discover/fetchApi";
 import { setDiscover } from "@/store/televisi/discover";
-import { getNowPlaying } from "@/lib/playing/fetchApi";
+import { getNowPlaying } from "@/lib/movie/playing/fetchApi";
 import { setNowPlaying } from "@/store/movie/playing";
-import { getActionTv } from "@/lib/action/fetchApi";
+import { getActionTv } from "@/lib/televisi/action/fetchApi";
 import action, { setActionTv } from "@/store/televisi/action";
 import Banner from "./detail/banner";
 import Row from "../../components/row";

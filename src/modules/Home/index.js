@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPopular } from "@/lib/popular/fetchApi";
+import { getPopular } from "@/lib/movie/popular/fetchApi";
 import { setPopular } from "@/store/movie/popular";
-import { getTrending } from "@/lib/trending/fetchApi";
+import { getTrending } from "@/lib/movie/trending/fetchApi";
 import { setTrending } from "@/store/movie/trending";
-import { getHorror } from "@/lib/horror/fetchApi";
+import { getHorror } from "@/lib/movie/horror/fetchApi";
 import { setHorror } from "@/store/movie/horror";
-import { getNowPlaying } from "@/lib/playing/fetchApi";
+import { getNowPlaying } from "@/lib/movie/playing/fetchApi";
 import { setNowPlaying } from "@/store/movie/playing";
 import Banner from "./detail/banner";
 import Row from "../../components/row";
