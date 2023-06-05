@@ -51,6 +51,9 @@ function Row({ data, baseURL, title }) {
                               <BsFillPlayFill size={30} />
                             </div>
                           </div>
+                          <p className="text-green-400 font-semibold mt-4">
+                            {item.vote_average} cocok
+                          </p>
                         </div>
                       </div>
                     </div>
