@@ -47,7 +47,7 @@ function Banner({ data, baseURL }) {
                           className=" font-medium rounded-md text-lg px-6 py-2.5 text-center items-center inline-flex bg-white hover:bg-opacity-60 text-black mr-2 mb-2"
                         >
                           <span>
-                            <BsFillPlayFill className=" text-4xl inline-flex " />{" "}
+                            <BsFillPlayFill className=" text-4xl inline-flex " />
                             Putar
                           </span>
                         </button>

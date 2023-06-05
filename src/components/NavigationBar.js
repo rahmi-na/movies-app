@@ -56,14 +56,14 @@ function NavigationBar() {
             </a>
 
             <div className={`w-full md:block md:w-auto hidden`}>
-              <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+              <ul className="font-medium text-sm flex flex-col p-4 md:p-1 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
                 {menu?.map((item, idx) => (
                   <li
                     key={idx}
                     className={
                       router.pathname === item.href
                         ? "active font-bold"
-                        : "font-normal"
+                        : "font-normal hover:text-gray-300"
                     }
                   >
                     <a
