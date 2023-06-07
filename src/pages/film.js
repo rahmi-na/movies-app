@@ -1,4 +1,4 @@
-import HomePage from "@/modules/Home";
+import FilmPage from "@/modules/Film";
 import nookies from "nookies";
 
 export const getServerSideProps = async (ctx) => {
@@ -20,4 +20,4 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-export default HomePage;
+export default FilmPage;
