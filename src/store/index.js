@@ -3,8 +3,12 @@ import popular from "./movie/popular";
 import trending from "./movie/trending";
 import horror from "./movie/horror";
 import nowPlaying from "./movie/playing";
-import discover from "./televisi/discover";
-import action from "./televisi/action";
+import actionTv from "./televisi/action";
+import crimeTv from "./televisi/crime";
+import animationTv from "./televisi/animation";
+import mysteryTv from "./televisi/mystery";
+import dramaTv from "./televisi/drama";
+import popularTv from "./televisi/popular";
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +19,11 @@ export const store = configureStore({
     nowPlaying: nowPlaying,
 
     // televisi
-    discover: discover,
-    action: action,
+    popularTv: popularTv,
+    actionTv: actionTv,
+    crimeTv: crimeTv,
+    animationTv: animationTv,
+    mysteryTv: mysteryTv,
+    dramaTv: dramaTv,
   },
 });

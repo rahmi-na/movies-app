@@ -1,8 +1,8 @@
 import axios from "axios";
-import { API_KEY, API_TOKEN, TV_DISCOVER } from "@/constans/urlApi";
+import { API_KEY, API_TOKEN, MYSTERY_TV } from "@/constans/urlApi";
 
-export const getDiscoverTv = async () => {
-  const response = await axios.get(TV_DISCOVER, {
+export const getMysteryTv = async () => {
+  const response = await axios.get(MYSTERY_TV, {
     headers: {
       Authorization: `Bearer ${API_TOKEN}`,
     },

@@ -7,10 +7,15 @@ export const HORROR_MOVIES = BASE_URL + "/discover/movie?with_genres=27";
 export const NOW_PLAYING_MOVIES = BASE_URL + "/movie/now_playing";
 
 // TV
-export const TV_DISCOVER = BASE_URL + "/discover/tv?page=2";
+export const POPULAR_TV =
+  BASE_URL + "/discover/tv?sort_by=popularity.desc&with_original_language=en";
 export const ACTION_TV =
   BASE_URL +
   "/discover/tv?api_key=THE_KEY&sort_by=popularity.desc&page=1&with_original_language=en&with_genres=10759";
+export const CRIME_TV = BASE_URL + "/discover/tv?with_genres=80";
+export const ANIMATION_TV = BASE_URL + "/discover/tv?with_genres=16";
+export const MYSTERY_TV = BASE_URL + "/discover/tv?with_genres=9648";
+export const DRAMA_TV = BASE_URL + "/discover/tv?page=3&with_genres=18";
 
 // Account
 export const API_KEY = "5358b39964010814018850edbc55a689";

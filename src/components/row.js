@@ -103,7 +103,7 @@ function Row({ data, baseURL, title }) {
                   data?.map((item, idx) => {
                     const Image =
                       baseURL + item?.backdrop_path || item.poster_path;
-                    const title = item.title || item.original_name;
+                    const title = item.title || item.name;
                     const dateTime = item.first_air_date || item.release_date;
                     return (
                       <div

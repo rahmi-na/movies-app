@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  action: {},
+  actionTv: {},
 };
 
-export const action = createSlice({
-  name: "action",
+export const actionTv = createSlice({
+  name: "actionTv",
   initialState,
   reducers: {
-    setActionTv: (state, action) => {
-      state.action = action.payload;
+    setActionTv: (state, actionTv) => {
+      state.actionTv = actionTv.payload;
     },
   },
 });
 
-export const { setActionTv } = action.actions;
-export default action.reducer;
+export const { setActionTv } = actionTv.actions;
+export default actionTv.reducer;
