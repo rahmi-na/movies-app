@@ -15,7 +15,7 @@ import { setMysteryTv } from "@/store/televisi/mystery";
 import { getDramaTv } from "@/lib/televisi/drama/fetchApi";
 import { setDramaTv } from "@/store/televisi/drama";
 import Banner from "./detail/banner";
-import Row from "../../components/row";
+import Row from "@/components/Row";
 
 function TelevisiPage() {
   const dispatch = useDispatch();
