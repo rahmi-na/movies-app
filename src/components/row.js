@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { AiOutlineRight } from "react-icons/ai";
 import moment from "moment";
 import Modal from "./Modal";
+import Loader from "./Loader";
 
 function Row({ data, baseURL, title }) {
   const slider = useRef(null);
@@ -61,26 +62,68 @@ function Row({ data, baseURL, title }) {
 
   return (
     <div>
-      <div className="relative px-16 md:px-14 py-4 ">
-        <div className="flex items-center">
-          <button
-            className="text-white text-3xl pb-2 px-2 font-semibold flex items-end"
-            style={{ fontSize: "1.4vw" }}
-            type="button"
-            onMouseEnter={handleMoreEnter}
-            onMouseLeave={handleMoreLeave}
-          >
-            {title}
-            {more && (
-              <button
-                onClick={handleModal}
-                className="flex text-sm items-center ml-2 mb-1.5 animate-pulse text-[#54b9c5]"
-              >
-                <h1>Telusuri Semua</h1>
-                <AiOutlineRight size={12} />
-              </button>
-            )}
-          </button>
+      <div className="relative px-16 md:px-14 py-4">
+        <div className="w-full flex items-center justify-center text-white">
+          <div className="w-full">
+            <div className="px-1">
+              {data?.length ? (
+                <div>
+                  <div className="flex items-center">
+                    <button
+                      className="text-white text-3xl pb-2 px-2 font-semibold flex items-end"
+                      style={{ fontSize: "1.4vw" }}
+                      type="button"
+                      onMouseEnter={handleMoreEnter}
+                      onMouseLeave={handleMoreLeave}
+                    >
+                      {title}
+                      {more && (
+                        <button
+                          onClick={handleModal}
+                          className="flex text-sm items-center ml-2 mb-1.5 animate-pulse text-[#54b9c5]"
+                        >
+                          <h1>Telusuri Semua</h1>
+                          <AiOutlineRight size={12} />
+                        </button>
+                      )}
+                    </button>
+                  </div>
+                  <Slider ref={slider} {...settings}>
+                    {data?.map((item, idx) => {
+                      const Image =
+                        baseURL + item?.backdrop_path || item.poster_path;
+                      const title = item.title || item.name;
+                      const dateTime = item.first_air_date || item.release_date;
+                      return (
+                        <div
+                          key={idx}
+                          className="relative px-1 z-0"
+                          onMouseEnter={() => handleMouseEnter(idx)}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          <img
+                            src={Image}
+                            alt=""
+                            className="w-full rounded z-0"
+                          />
+                          {hoveredIndex === idx && (
+                            <div className="z-0 absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                              <h3 className="text-sm font-semibold">{title}</h3>
+                              <p className="mt-2 text-xs">
+                                {moment(`${dateTime}`, "YYYYMMDD").format("ll")}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </Slider>
+                </div>
+              ) : (
+                <Loader />
+              )}
+            </div>
+          </div>
         </div>
 
         <Modal
@@ -94,50 +137,8 @@ function Row({ data, baseURL, title }) {
           title={title}
           dropDownRef={dropDownRef}
         />
-
-        <div className="w-full flex items-center justify-center text-white">
-          <div className="w-full">
-            <div className="px-1">
-              <Slider ref={slider} {...settings}>
-                {data?.length ? (
-                  data?.map((item, idx) => {
-                    const Image =
-                      baseURL + item?.backdrop_path || item.poster_path;
-                    const title = item.title || item.name;
-                    const dateTime = item.first_air_date || item.release_date;
-                    return (
-                      <div
-                        key={idx}
-                        className="relative px-1 z-0"
-                        onMouseEnter={() => handleMouseEnter(idx)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        <img
-                          src={Image}
-                          className="w-full rounded z-0"
-                          alt="Thumbnail"
-                        />
-                        {hoveredIndex === idx && (
-                          <div className="z-0 absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 className="text-sm font-semibold">{title}</h3>
-                            <p className="mt-2 text-xs">
-                              {moment(`${dateTime}`, "YYYYMMDD").format("ll")}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div>Null</div>
-                )}
-              </Slider>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
 }
-
 export default Row;

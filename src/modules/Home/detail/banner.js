@@ -8,7 +8,7 @@ function Banner({ data, baseURL }) {
   return (
     <div>
       {data?.length
-        ? data?.slice(10, 11).map((item, idx) => {
+        ? data?.slice(5, 6).map((item, idx) => {
             const images = baseURL + item?.backdrop_path;
 
             return (

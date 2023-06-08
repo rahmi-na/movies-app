@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import moment from "moment";
+import Loader from "./Loader";
 
 function RowNum({ data, baseURL, title }) {
   const slider = useRef(null);
@@ -26,62 +27,64 @@ function RowNum({ data, baseURL, title }) {
   return (
     <div>
       <div className="relative px-16 md:px-14 py-4 ">
-        <div className="flex items-center">
-          <button
-            className="text-white text-3xl pb-2 px-2 font-semibold flex items-end"
-            style={{ fontSize: "1.4vw" }}
-            type="button"
-          >
-            {title}
-          </button>
-        </div>
-
         <div className="w-full flex items-center justify-center text-white">
           <div className="w-full">
             <div className="px-1">
-              <Slider ref={slider} {...settings}>
-                {data?.length ? (
-                  data?.slice(0, 10)?.map((item, idx) => {
-                    const Image = baseURL + item.poster_path;
-                    const title = item.title || item.name;
-                    const dateTime = item.first_air_date || item.release_date;
-                    return (
-                      <div
-                        key={idx}
-                        className="relative px-1 z-0"
-                        onMouseEnter={() => handleMouseEnter(idx)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        <div className="flex px-2 items-center">
-                          <div className="flex justify-between w-[300px]">
-                            <div className="relative w-full h-100 bg-transparent flex items-end justify-end cursor-pointer">
-                              <span className="text-9xl font-extrabold number">
-                                {idx + 1}
-                              </span>
-                            </div>
-                          </div>
-                          <img
-                            src={Image}
-                            alt=""
-                            className="w-full rounded z-0 h-52"
-                          />
-                        </div>
+              {data?.length ? (
+                <div>
+                  <div className="flex items-center">
+                    <button
+                      className="text-white text-3xl pb-2 px-2 font-semibold flex items-end"
+                      style={{ fontSize: "1.4vw" }}
+                      type="button"
+                    >
+                      {title}
+                    </button>
+                  </div>
 
-                        {hoveredIndex === idx && (
-                          <div className="z-0 absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 className="text-sm font-semibold">{title}</h3>
-                            <p className="mt-2 text-xs">
-                              {moment(`${dateTime}`, "YYYYMMDD").format("ll")}
-                            </p>
+                  <Slider ref={slider} {...settings}>
+                    {data?.slice(0, 10)?.map((item, idx) => {
+                      const Image = baseURL + item.poster_path;
+                      const title = item.title || item.name;
+                      const dateTime = item.first_air_date || item.release_date;
+                      return (
+                        <div
+                          key={idx}
+                          className="relative px-1 z-0"
+                          onMouseEnter={() => handleMouseEnter(idx)}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          <div className="flex px-2 items-center">
+                            <div className="flex justify-between w-[300px]">
+                              <div className="relative w-full h-100 bg-transparent flex items-end justify-end cursor-pointer">
+                                <span className="text-9xl font-extrabold number">
+                                  {idx + 1}
+                                </span>
+                              </div>
+                            </div>
+                            <img
+                              src={Image}
+                              alt=""
+                              className="w-full rounded z-0 h-52"
+                            />
                           </div>
-                        )}
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div>Null</div>
-                )}
-              </Slider>
+
+                          {hoveredIndex === idx && (
+                            <div className="z-0 absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                              <h3 className="text-sm font-semibold">{title}</h3>
+                              <p className="mt-2 text-xs">
+                                {moment(`${dateTime}`, "YYYYMMDD").format("ll")}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </Slider>
+                </div>
+              ) : (
+                <Loader />
+              )}
             </div>
           </div>
         </div>

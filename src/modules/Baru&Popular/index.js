@@ -6,7 +6,6 @@ import { getTrending } from "@/lib/movie/trending/fetchApi";
 import { setTrending } from "@/store/movie/trending";
 import { getTrendingTv } from "@/lib/televisi/trending/fetchApi";
 import { setTrendingTv } from "@/store/televisi/trending";
-import Banner from "./detail/banner";
 import Row from "@/components/Row";
 import RowNum from "@/components/RowNum";
 
@@ -32,8 +31,6 @@ function BaruPopularPage() {
 
   return (
     <div>
-      {/* Banner */}
-
       {/* Carousel */}
       <div className="pt-32">
         <Row title="Populer di Netflix" data={popular} baseURL={baseUrlBody} />
