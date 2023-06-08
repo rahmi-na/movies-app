@@ -3,6 +3,7 @@ import popular from "./movie/popular";
 import trending from "./movie/trending";
 import horror from "./movie/horror";
 import nowPlaying from "./movie/playing";
+import discover from "./movie/discover";
 import actionTv from "./televisi/action";
 import crimeTv from "./televisi/crime";
 import animationTv from "./televisi/animation";
@@ -18,6 +19,7 @@ export const store = configureStore({
     trending: trending,
     horror: horror,
     nowPlaying: nowPlaying,
+    discover: discover,
 
     // televisi
     popularTv: popularTv,

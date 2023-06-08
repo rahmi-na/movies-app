@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineDown } from "react-icons/ai";
-import { setPopular, setLanguage } from "@/store/movie/popular";
 import { languages } from "@/utils/languages";
 import { getDiscover } from "@/lib/movie/discover/fetchApi";
+import { setDiscover, setLanguage } from "@/store/movie/discover";
 import moment from "moment";
 
 function TerlusuriBahasaPage({ data }) {
@@ -12,11 +12,11 @@ function TerlusuriBahasaPage({ data }) {
   const [open, setOpen] = useState(false);
   const dropDownRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const { popular, language } = useSelector((state) => state.popular);
+  const { discover, language } = useSelector((state) => state.discover);
 
   useEffect(() => {
     getDiscover(language).then((data) => {
-      dispatch(setPopular(data));
+      dispatch(setDiscover(data));
     });
   }, [dispatch, language]);
 
@@ -72,9 +72,9 @@ function TerlusuriBahasaPage({ data }) {
           </div>
         </div>
         <div className=" flex justify-center items-center  z-0 pt-44">
-          {popular?.length ? (
+          {discover?.length ? (
             <div className="grid grid-cols-6 gap-4">
-              {popular.map((item, idx) => {
+              {discover.map((item, idx) => {
                 const Image = baseURL + item.poster_path;
                 const title = item.title || item.original_name;
                 const dateTime = item.first_air_date || item.release_date;
