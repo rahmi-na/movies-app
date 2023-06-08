@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPopularTv } from "@/lib/televisi/popular/fetchApi";
 import { setPopularTv } from "@/store/televisi/popular";
+import { getTrendingTv } from "@/lib/televisi/trending/fetchApi";
+import { setTrendingTv } from "@/store/televisi/trending";
 import { getNowPlaying } from "@/lib/movie/playing/fetchApi";
 import { setNowPlaying } from "@/store/movie/playing";
 import { getActionTv } from "@/lib/televisi/action/fetchApi";
@@ -16,6 +18,7 @@ import { getDramaTv } from "@/lib/televisi/drama/fetchApi";
 import { setDramaTv } from "@/store/televisi/drama";
 import Banner from "./detail/banner";
 import Row from "@/components/Row";
+import RowNum from "@/components/RowNum";
 
 function TelevisiPage() {
   const dispatch = useDispatch();
@@ -23,6 +26,7 @@ function TelevisiPage() {
   const baseURL = "https://image.tmdb.org/t/p/original";
   const baseUrlBody = "https://image.tmdb.org/t/p/w500";
   const { popularTv } = useSelector((state) => state.popularTv);
+  const { trendingTv } = useSelector((state) => state.trendingTv);
   const { nowPlaying } = useSelector((state) => state.nowPlaying);
   const { actionTv } = useSelector((state) => state.actionTv);
   const { crimeTv } = useSelector((state) => state.crimeTv);
@@ -33,6 +37,9 @@ function TelevisiPage() {
   useEffect(() => {
     getPopularTv().then((data) => {
       dispatch(setPopularTv(data));
+    });
+    getTrendingTv().then((data) => {
+      dispatch(setTrendingTv(data));
     });
     getNowPlaying().then((data) => {
       dispatch(setNowPlaying(data));
@@ -57,9 +64,14 @@ function TelevisiPage() {
   return (
     <div>
       {/* Banner */}
-      <Banner data={popularTv} baseURL={baseURL} />
+      <Banner data={trendingTv} baseURL={baseURL} />
 
-      {/* Carousel: Popular, trending */}
+      {/* Carousel */}
+      <RowNum
+        title="10 Acara TV Teratas Hari Ini"
+        data={trendingTv}
+        baseURL={baseURL}
+      />
       <Row
         title="Sedang Tren Sekarang"
         data={popularTv}

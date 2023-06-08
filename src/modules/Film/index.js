@@ -10,6 +10,7 @@ import { getNowPlaying } from "@/lib/movie/playing/fetchApi";
 import { setNowPlaying } from "@/store/movie/playing";
 import Banner from "./detail/banner";
 import Row from "@/components/Row";
+import RowNum from "@/components/RowNum";
 
 function FilmPage() {
   const dispatch = useDispatch();
@@ -40,7 +41,12 @@ function FilmPage() {
       {/* Banner */}
       <Banner data={popular} baseURL={baseURL} />
 
-      {/* Carousel: Popular, Trending, Now Playing, Horror */}
+      {/* Carousel */}
+      <RowNum
+        title="10 Film Teratas Hari Ini"
+        data={trending}
+        baseURL={baseURL}
+      />
       <Row title="Populer di Netflix" data={popular} baseURL={baseUrlBody} />
       <Row title="Sedang Tren Sekarang" data={trending} baseURL={baseUrlBody} />
       <Row title="Lanjutkan Menonton" data={nowPlaying} baseURL={baseUrlBody} />

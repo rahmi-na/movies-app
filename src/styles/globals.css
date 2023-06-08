@@ -26,3 +26,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
+
+/* ................ */
+.number {
+  text-shadow: -2px 0 #9c9c9c, 0 2px #9c9c9c, 2px 0 #9c9c9c, 0 -2px #9c9c9c;
+  color: black;
+}

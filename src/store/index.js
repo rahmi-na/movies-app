@@ -8,6 +8,7 @@ import crimeTv from "./televisi/crime";
 import animationTv from "./televisi/animation";
 import mysteryTv from "./televisi/mystery";
 import dramaTv from "./televisi/drama";
+import trendingTv from "./televisi/trending";
 import popularTv from "./televisi/popular";
 
 export const store = configureStore({
@@ -20,6 +21,7 @@ export const store = configureStore({
 
     // televisi
     popularTv: popularTv,
+    trendingTv: trendingTv,
     actionTv: actionTv,
     crimeTv: crimeTv,
     animationTv: animationTv,
