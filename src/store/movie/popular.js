@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   popular: {},
+  language: "",
 };
 
 export const popular = createSlice({
@@ -11,8 +12,11 @@ export const popular = createSlice({
     setPopular: (state, action) => {
       state.popular = action.payload;
     },
+    setLanguage: (state, action) => {
+      state.language = action.payload;
+    },
   },
 });
 
-export const { setPopular } = popular.actions;
+export const { setPopular, setLanguage } = popular.actions;
 export default popular.reducer;

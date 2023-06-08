@@ -5,6 +5,7 @@ export const POPULAR_MOVIES = BASE_URL + "/movie/popular";
 export const TRENDING_MOVIES = BASE_URL + "/trending/movie/week?api_key=";
 export const HORROR_MOVIES = BASE_URL + "/discover/movie?with_genres=27";
 export const NOW_PLAYING_MOVIES = BASE_URL + "/movie/now_playing";
+export const DISCOVER_MOVIES = BASE_URL + "/discover/movie";
 
 // TV
 export const POPULAR_TV =
