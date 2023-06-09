@@ -78,7 +78,7 @@ function TelevisiPage() {
         baseURL={baseUrlBody}
       />
       <Row title="Lanjutkan Menonton" data={nowPlaying} baseURL={baseUrlBody} />
-      <Row title={`${about} Drama`} data={dramaTv} baseURL={baseUrlBody} />
+      <Row title="Drama Korea" data={dramaTv} baseURL={baseUrlBody} />
       <Row
         title="Laga & Petualangan TV"
         data={actionTv}

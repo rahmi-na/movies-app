@@ -57,7 +57,7 @@ function HomePage() {
 
       <Row title="Lanjutkan Menonton" data={nowPlaying} baseURL={baseUrlBody} />
       <Row title="Sedang Tren Sekarang" data={popular} baseURL={baseUrlBody} />
-      <Row title="Acara TV Drama Barat" data={dramaTv} baseURL={baseUrlBody} />
+      <Row title="Drama Korea" data={dramaTv} baseURL={baseUrlBody} />
       <RowNum
         title="10 Film Teratas Hari Ini"
         data={trending}

@@ -19,7 +19,7 @@ export const ANIMATION_TV = BASE_URL + "/discover/tv?with_genres=16";
 export const MYSTERY_TV = BASE_URL + "/discover/tv?with_genres=9648";
 export const DRAMA_TV =
   BASE_URL +
-  "/discover/tv?with_original_language=en&sort_by=popularity.desc&with_genres=18";
+  "/discover/tv?with_original_language=ko&sort_by=popularity.desc&with_genres=18";
 
 // Account
 export const API_KEY = "5358b39964010814018850edbc55a689";
