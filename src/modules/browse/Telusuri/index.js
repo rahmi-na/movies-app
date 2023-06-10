@@ -5,6 +5,7 @@ import { languages } from "@/utils/languages";
 import { getDiscover } from "@/lib/movie/discover/fetchApi";
 import { setDiscover, setLanguage } from "@/store/movie/discover";
 import moment from "moment";
+import Image from "next/image";
 
 function TerlusuriBahasaPage({ data }) {
   const baseURL = "https://image.tmdb.org/t/p/w500";
@@ -75,7 +76,7 @@ function TerlusuriBahasaPage({ data }) {
           {discover?.length ? (
             <div className="grid grid-cols-6 gap-4">
               {discover.map((item, idx) => {
-                const Image = baseURL + item.poster_path;
+                const Images = baseURL + item.poster_path;
                 const title = item.title || item.original_name;
                 const dateTime = item.first_air_date || item.release_date;
                 return (
@@ -85,7 +86,13 @@ function TerlusuriBahasaPage({ data }) {
                     onMouseEnter={() => handleMouseEnter(idx)}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <img src={Image} alt="" className="w-full rounded " />
+                    <Image
+                      src={Images}
+                      alt=""
+                      className="w-full rounded z-0"
+                      width={1000}
+                      height={0}
+                    />
                     {hoveredIndex === idx && (
                       <div className=" absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
                         <h3 className="text-lg font-semibold">{title}</h3>

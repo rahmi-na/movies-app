@@ -20,7 +20,7 @@ export const languages = [
     country: "Korea",
   },
   {
-    code: "jv",
-    country: "Jepang",
+    code: "th",
+    country: "Thailand",
   },
 ];

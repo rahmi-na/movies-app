@@ -4,6 +4,7 @@ import { AiOutlineRight } from "react-icons/ai";
 import moment from "moment";
 import Modal from "./Modal";
 import Loader from "./Loader";
+import Image from "next/image";
 
 function Row({ data, baseURL, title }) {
   const slider = useRef(null);
@@ -90,7 +91,7 @@ function Row({ data, baseURL, title }) {
                   </div>
                   <Slider ref={slider} {...settings}>
                     {data?.map((item, idx) => {
-                      const Image =
+                      const Images =
                         baseURL + item?.backdrop_path || item.poster_path;
                       const title = item.title || item.name;
                       const dateTime = item.first_air_date || item.release_date;
@@ -101,10 +102,12 @@ function Row({ data, baseURL, title }) {
                           onMouseEnter={() => handleMouseEnter(idx)}
                           onMouseLeave={handleMouseLeave}
                         >
-                          <img
-                            src={Image}
+                          <Image
+                            src={Images}
                             alt=""
                             className="w-full rounded z-0"
+                            width={1000}
+                            height={0}
                           />
                           {hoveredIndex === idx && (
                             <div className="z-0 absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">

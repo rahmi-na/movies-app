@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import moment from "moment";
 import Loader from "./Loader";
+import Image from "next/image";
 
 function RowNum({ data, baseURL, title }) {
   const slider = useRef(null);
@@ -44,7 +45,7 @@ function RowNum({ data, baseURL, title }) {
 
                   <Slider ref={slider} {...settings}>
                     {data?.slice(0, 10)?.map((item, idx) => {
-                      const Image = baseURL + item.poster_path;
+                      const Images = baseURL + item.poster_path;
                       const title = item.title || item.name;
                       const dateTime = item.first_air_date || item.release_date;
                       return (
@@ -62,10 +63,12 @@ function RowNum({ data, baseURL, title }) {
                                 </span>
                               </div>
                             </div>
-                            <img
-                              src={Image}
+                            <Image
+                              src={Images}
                               alt=""
-                              className="w-full rounded z-0 h-52"
+                              className="w-full rounded z-0"
+                              width={100}
+                              height={100}
                             />
                           </div>
 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "@/../../public/assets/logo.png";
+import account from "@/../../public/assets/account.png";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -51,9 +52,9 @@ function NavigationBar() {
       <div className="relative">
         <div className="px-4 md:px-16 max-w-full flex flex-wrap items-center justify-between mx-auto py-4">
           <div className="flex">
-            <a href="https://flowbite.com/" className="flex items-center mr-10">
-              <Image src={logo} alt="FlowbiteLogo" width={100} />
-            </a>
+            <Link href="/" className="flex items-center mr-10">
+              <Image src={logo} alt="" width={100} height={0} />
+            </Link>
 
             <div className={`w-full md:block md:w-auto hidden`}>
               <ul className="font-medium text-sm flex flex-col p-4 md:p-1 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
@@ -103,11 +104,13 @@ function NavigationBar() {
                 >
                   <div className="w-9 h-9 rounded-lg mr-1 flex items-center justify-center">
                     <Link href="/account">
-                      <img
-                        src="https://rb.gy/g1pwyx"
+                      <Image
+                        src={account}
                         alt=""
                         className="cursor-pointer rounded"
-                      ></img>
+                        width={32}
+                        height={32}
+                      />
                     </Link>
                   </div>
                   <IoMdArrowDropdown />
