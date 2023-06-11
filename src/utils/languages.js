@@ -12,6 +12,10 @@ export const languages = [
     country: "English",
   },
   {
+    code: "cn",
+    country: "China",
+  },
+  {
     code: "fr",
     country: "Prancis",
   },
