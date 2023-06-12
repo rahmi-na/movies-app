@@ -27,4 +27,8 @@ export const languages = [
     code: "th",
     country: "Thailand",
   },
+  {
+    code: "tr",
+    country: "Turkey",
+  },
 ];
