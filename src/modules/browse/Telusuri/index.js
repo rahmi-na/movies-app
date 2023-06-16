@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineDown } from "react-icons/ai";
 import { languages } from "@/utils/languages";
 import { getDiscover } from "@/lib/movie/discover/fetchApi";
 import { setDiscover, setLanguage } from "@/store/movie/discover";
