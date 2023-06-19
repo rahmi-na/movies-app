@@ -13,8 +13,8 @@ export const POPULAR_TV =
   BASE_URL + "/tv/popular?with_original_language=en&page=2";
 export const TRENDING_TV = BASE_URL + "/trending/tv/day?language=en-US";
 export const ANIMATION_TV = BASE_URL + "/discover/tv?with_genres=16";
-export const CRIME_TV = BASE_URL + "/discover/tv?with_genres=80";
 export const MYSTERY_TV = BASE_URL + "/discover/tv?with_genres=9648";
+export const CRIME_TV = BASE_URL + "/discover/tv?with_genres=80";
 export const DRAMA_TV =
   BASE_URL +
   "/discover/tv?with_original_language=ko&sort_by=popularity.desc&with_genres=18";
