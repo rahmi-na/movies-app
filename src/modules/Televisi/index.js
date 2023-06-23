@@ -84,13 +84,13 @@ function TelevisiPage() {
         data={actionTv}
         baseURL={baseUrlBody}
       />
-      <Row title={`${about} Misteri`} data={mysteryTv} baseURL={baseUrlBody} />
-      <Row title={`${about} Kriminal`} data={crimeTv} baseURL={baseUrlBody} />
       <Row
         title={`${about} Animasi`}
         data={animationTv}
         baseURL={baseUrlBody}
       />
+      <Row title={`${about} Misteri`} data={mysteryTv} baseURL={baseUrlBody} />
+      <Row title={`${about} Kriminal`} data={crimeTv} baseURL={baseUrlBody} />
     </div>
   );
 }
