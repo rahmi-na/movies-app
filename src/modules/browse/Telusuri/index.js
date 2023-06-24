@@ -71,7 +71,7 @@ function TerlusuriBahasaPage({ data }) {
             </select>
           </div>
         </div>
-        <div className=" flex justify-center items-center  z-0 pt-44">
+        <div className="flex justify-center items-center  z-0 pt-44">
           {discover?.length ? (
             <div className="grid grid-cols-6 gap-4">
               {discover.map((item, idx) => {
@@ -93,7 +93,7 @@ function TerlusuriBahasaPage({ data }) {
                       height={0}
                     />
                     {hoveredIndex === idx && (
-                      <div className=" absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
                         <h3 className="text-lg font-semibold">{title}</h3>
                         <p className="mt-2 text-sm">
                           {moment(`${dateTime}`, "YYYYMMDD").format("ll")}
