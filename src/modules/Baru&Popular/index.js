@@ -39,6 +39,11 @@ function BaruPopularPage() {
     <div>
       {/* Carousel */}
       <div className="pt-32">
+        <Row
+          title="Upcoming di Netflix"
+          data={upcoming}
+          baseURL={baseUrlBody}
+        />
         <Row title="Populer di Netflix" data={popular} baseURL={baseUrlBody} />
         <RowNum
           title="10 Film Teratas Hari Ini"
@@ -49,11 +54,6 @@ function BaruPopularPage() {
           title="10 Acara TV Teratas Hari Ini"
           data={trendingTv}
           baseURL={baseURL}
-        />
-        <Row
-          title="Upcoming di Netflix"
-          data={upcoming}
-          baseURL={baseUrlBody}
         />
       </div>
     </div>
