@@ -68,7 +68,6 @@ function HomePage() {
         data={trendingTv}
         baseURL={baseURL}
       />
-      <Row title="Lanjutkan Menonton" data={nowPlaying} baseURL={baseUrlBody} />
       <Row title="Film Horor" data={horror} baseURL={baseUrlBody} />
     </div>
   );

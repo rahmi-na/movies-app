@@ -3,26 +3,25 @@ import React from "react";
 function DaftarSayaPage({ data }) {
   return (
     <div className="px-4 md:px-16 h-[calc(100vh-0rem)]">
-      <div className="text-white">
-        <h1 className="pt-28 fixed text-3xl">Daftar Saya</h1>
-        <div className="h-screen flex justify-center items-center">
-          {data?.length ? (
-            <div className="grid grid-cols-6">
-              {data.map((item, idx) => {
-                return (
-                  <div key={idx}>
-                    <h1>{idx}</h1>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <h1 className=" text-gray-500">
-              Kamu belum menambahkan judul apa pun ke daftar
-            </h1>
-          )}
-        </div>
+      <h1 className="pt-28 fixed text-3xl text-white">Daftar Saya</h1>
+      <div className="h-screen flex justify-center items-center">
+        {data?.length ? (
+          <div className="grid grid-cols-6">
+            {data.map((item, idx) => {
+              return (
+                <div key={idx}>
+                  <h1>{idx}</h1>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <h1 className=" text-gray-500">
+            Kamu belum menambahkan judul apa pun ke daftar
+          </h1>
+        )}
       </div>
+      \
     </div>
   );
 }

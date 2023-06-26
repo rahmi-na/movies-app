@@ -19,9 +19,7 @@ function Banner({ data, baseURL }) {
                     backgroundImage: `url(${images})`,
                   }}
                 >
-                  <div className=" ">
-                    <div className="z-0 h-1/3 absolute top-3/4 inset-0 bg-gradient-to-b from-transparent via-body to-body opacity-80" />
-                  </div>
+                  <div className="z-0 h-1/3 absolute top-3/4 inset-0 bg-gradient-to-b from-transparent via-body to-body opacity-80" />
                   <div className="px-4 md:px-16 max-w-full z-10">
                     <div className="text-white">
                       <span className=" uppercase text-3lg font-bold inline-flex items-center">
