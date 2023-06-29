@@ -16,7 +16,7 @@ function DaftarSayaPage({ data }) {
             })}
           </div>
         ) : (
-          <h1 className=" text-gray-500">
+          <h1 className="text-gray-500">
             Kamu belum menambahkan judul apa pun ke daftar
           </h1>
         )}
