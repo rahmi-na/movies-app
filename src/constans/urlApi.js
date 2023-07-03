@@ -22,7 +22,7 @@ export const DRAMA_TV =
   "/discover/tv?with_original_language=ko&sort_by=popularity.desc&with_genres=18";
 export const ACTION_TV =
   BASE_URL +
-  "/discover/tv?api_key=THE_KEY&sort_by=popularity.desc&page=1&with_original_language=en&with_genres=10759";
+  "/discover/tv?api_key=THE_KEY&sort_by=popularity.desc&with_original_language=en&with_genres=10759";
 
 // Account
 export const API_KEY = "5358b39964010814018850edbc55a689";
