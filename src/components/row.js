@@ -62,7 +62,7 @@ function Row({ data, baseURL, title }) {
   });
 
   return (
-    <div>
+    <>
       <div className="relative px-16 md:px-14 py-4">
         <div className="w-full flex items-center justify-center text-white">
           <div className="w-full px-1">
@@ -139,7 +139,7 @@ function Row({ data, baseURL, title }) {
         title={title}
         dropDownRef={dropDownRef}
       />
-    </div>
+    </>
   );
 }
 export default Row;

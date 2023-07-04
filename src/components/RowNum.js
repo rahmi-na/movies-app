@@ -26,7 +26,7 @@ function RowNum({ data, baseURL, title }) {
   };
 
   return (
-    <div>
+    <>
       <div className="relative px-16 md:px-14 py-4 ">
         <div className="w-full flex items-center justify-center text-white">
           <div className="w-full">
@@ -92,7 +92,7 @@ function RowNum({ data, baseURL, title }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 export default RowNum;
